@@ -4,4 +4,7 @@
       <NuxtPage />
     </NuxtLayout>
   </UApp>
+
+  <AppPwaHead />
+  <AppPwaPrompt />
 </template>
