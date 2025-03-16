@@ -1,0 +1,56 @@
+{
+  "name": "yckit-base",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "files": [
+    "app",
+    "assets",
+    "components",
+    "composables",
+    "layouts",
+    "middleware",
+    "modules",
+    "pages",
+    "plugins",
+    "public",
+    "server",
+    "shared",
+    "utils",
+    "types",
+    "app.vue",
+    "app.config.ts",
+    "error.vue",
+    "nuxt.config.ts",
+    "tailwind.config.ts"
+  ],
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "prepare": "is-ci || husky",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "lint-staged": {
+    "*": "eslint"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^3.0.0",
+    "nuxt": "^3.16.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@nuxt/eslint": "^1.2.0",
+    "eslint": "^9.22.0",
+    "husky": "^9.1.7",
+    "is-ci": "^4.1.0",
+    "lint-staged": "^15.5.0",
+    "typescript": "^5.8.2"
+  }
+}
