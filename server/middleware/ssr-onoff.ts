@@ -2,9 +2,9 @@
 // or https://www.lichter.io/articles/nuxt3-dynamic-ssr-spa/#solution-3-a-custom-nitro-middleware
 
 export default defineEventHandler((event) => {
-  const url = getRequestURL(event)
+  const { ssr } = getQuery(event)
 
-  if (url.searchParams.get('ssr') === 'false') {
+  if (ssr === 'false') {
     event.context.nuxt ||= {}
     event.context.nuxt.noSSR = true
   }

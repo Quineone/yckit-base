@@ -5,6 +5,6 @@
     </NuxtLayout>
   </UApp>
 
-  <AppPwaHead />
+  <AppPwaAssets />
   <AppPwaPrompt />
 </template>
