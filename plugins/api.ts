@@ -1,9 +1,14 @@
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
   const runtimeConfig = useRuntimeConfig()
   const route = useRoute()
+  const { $eventBus } = useNuxtApp()
+
+  const baseURL = import.meta.client
+    ? useBaseURL()
+    : runtimeConfig.public.apiEndpoint
 
   const api = $fetch.create({
-    baseURL: runtimeConfig.public.apiEndpoint,
+    baseURL,
 
     onRequest({ options }) {
       // handle reload
@@ -15,12 +20,11 @@ export default defineNuxtPlugin((nuxtApp) => {
       }
     },
 
-    onResponse() {
-    },
+    onResponse() {},
 
     async onResponseError({ response }) {
       if (response.status === 401) {
-        await nuxtApp.runWithContext(() => navigateTo('/login'))
+        $eventBus.emit(EventName.Api401)
       }
     },
   })

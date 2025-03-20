@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   ],
 
   imports: {
-    dirs: ['composables/**'],
+    dirs: ['composables/**/use*.ts'],
   },
 
   devtools: { enabled: true },
@@ -30,8 +30,13 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiEndpoint: process.env.NUXT_PUBLIC_API_ENDPOINT || 'http://localhost:6700',
+      apiEndpoint: process.env.NUXT_PUBLIC_API_ENDPOINT,
     },
+  },
+
+  routeRules: {
+    // proxy api routes when ssr false to prevent CORS
+    '/api/**': { proxy: `${process.env.NUXT_PUBLIC_API_ENDPOINT}/api/**` },
   },
 
   future: {
@@ -40,7 +45,9 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-03-13',
 
-  // modules config options
+  /*
+    modules config options
+  */
   eslint: {
     config: {
       stylistic: true, // formatting
