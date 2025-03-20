@@ -1,7 +1,7 @@
 export default defineNuxtPlugin(() => {
   const runtimeConfig = useRuntimeConfig()
   const route = useRoute()
-  const { $eventBus } = useNuxtApp()
+  const { $events } = useNuxtApp()
 
   const baseURL = import.meta.client
     ? useBaseURL()
@@ -24,7 +24,7 @@ export default defineNuxtPlugin(() => {
 
     async onResponseError({ response }) {
       if (response.status === 401) {
-        $eventBus.emit(EventName.Api401)
+        $events.emit(EventName.Api401)
       }
     },
   })
