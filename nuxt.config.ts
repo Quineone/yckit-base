@@ -34,11 +34,6 @@ export default defineNuxtConfig({
     },
   },
 
-  routeRules: {
-    // proxy api routes when ssr false to prevent CORS
-    '/api/**': { proxy: `${process.env.NUXT_PUBLIC_API_ENDPOINT}/api/**` },
-  },
-
   future: {
     compatibilityVersion: 4,
   },

@@ -3,12 +3,8 @@ export const useApiClient = () => {
   const route = useRoute()
   const { $events } = useNuxtApp()
 
-  const baseURL = import.meta.client
-    ? useBaseURL()
-    : runtimeConfig.public.apiEndpoint
-
   const api = $fetch.create({
-    baseURL,
+    baseURL: runtimeConfig.public.apiEndpoint,
 
     onRequest({ options }) {
       // handle reload
