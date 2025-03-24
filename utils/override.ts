@@ -4,7 +4,7 @@
 import type { ComputedGetter, DebuggerOptions } from 'vue'
 
 function isComputedRef<T>(obj: any): obj is ComputedRef<T> {
-  return obj && 'value' in obj
+  return obj && isRef(obj) && isReadonly(obj)
 }
 
 function createFunctionProxy<T extends Function>(base: T): T {
