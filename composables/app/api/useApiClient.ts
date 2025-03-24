@@ -1,4 +1,4 @@
-export default defineNuxtPlugin(() => {
+export const useApiClient = () => {
   const runtimeConfig = useRuntimeConfig()
   const route = useRoute()
   const { $events } = useNuxtApp()
@@ -30,8 +30,6 @@ export default defineNuxtPlugin(() => {
   })
 
   return {
-    provide: {
-      api,
-    },
+    api,
   }
-})
+}

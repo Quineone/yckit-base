@@ -4,9 +4,9 @@ import { EventName, type Events } from './types'
 export { EventName }
 
 export const useEvents = () => {
-  const emitter = mitt<Events>()
+  const events = mitt<Events>()
 
   return {
-    emitter,
+    events,
   }
 }

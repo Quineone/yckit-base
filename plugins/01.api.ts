@@ -1,9 +1,9 @@
 export default defineNuxtPlugin(() => {
-  const { emitter } = useEvents()
+  const { api } = useApiClient()
 
   return {
     provide: {
-      events: emitter,
+      api,
     },
   }
 })

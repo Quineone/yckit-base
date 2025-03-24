@@ -23,7 +23,6 @@
 - yarn add mitt
 
 
-
 > further consider
 - @nuxt/scripts
 - @sidebase/nuxt-auth
@@ -32,8 +31,12 @@
 
 
 # deployment
-
 > entry point, require node >= 20.6.0
-```base
+```bash
 node --env-file=.env .output/server/index.mjs
+```
+
+# upgrade
+```bash
+npx nuxi upgrade
 ```
