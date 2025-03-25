@@ -1,5 +1,5 @@
 {
-  "name": "yckit-base",
+  "name": "@yckit/base",
   "version": "0.0.1",
   "type": "module",
   "main": "./nuxt.config.ts",

@@ -24,6 +24,7 @@
 
 
 > further consider
+- @nuxtjs/i18n
 - @nuxt/scripts
 - @sidebase/nuxt-auth
 - @formkit/auto-animate
